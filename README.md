@@ -34,3 +34,4 @@ Aha, i przydałby się jakiś sposób podejrzenia wygenerowanej szafki (wizualny
 # contributors:
 - baju
 - -krzys
+- Kwasia
