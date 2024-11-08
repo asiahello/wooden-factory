@@ -4,4 +4,4 @@ class Fitting:
         self.weight = weight  # todo: zdefiniować jednostki wagi
 
     def __repr__(self):
-        return f'Okucie({self.name}, {self.weight}g)'
+        return f'Okucie({self.name}, {self.weight}kg)'
