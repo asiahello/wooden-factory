@@ -49,7 +49,7 @@ class Cabinet:
             for _ in range(vertical_count):
                 elements.append(Element(width=50, height=self.height, board=self.board, fittings=[HINGE]))
             for _ in range(horizontal_count):
-                elements.append(Element(width=self.width, height=50, board=self.board))
+                elements.append(Element(width=self.width, height=50, board=self.board, fittings=[]))
         return elements
 
     def total_weight(self):
