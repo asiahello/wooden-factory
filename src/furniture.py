@@ -2,8 +2,12 @@ from boards import Board
 from element import Element
 from fittings import Fitting
 
-MDF = Board(name="MDF-700", type="MDF", density=700)
+MDF = Board(name="mdf", type="-", density=1000)
+PLYWOOD = Board(name='plywood', type="-", density=700)
+CHIPBOARD = Board(name='chipboard', type="-", density=600)
+
 HINGE = Fitting(name="Hinge", weight=0.2)
+
 
 class Cabinet:
     def __init__(self, width, height, type):

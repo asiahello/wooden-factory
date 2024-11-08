@@ -1,5 +1,5 @@
 class Board:
-    thickness = 18  # stala grubość dla każdej płyty
+    thickness : int = 18  # stala grubość dla każdej płyty
 
     def __init__(self, name: str, type: str, density: float):
         self.name = name

@@ -1,12 +1,7 @@
-# Przykładowe dane materiałowe
-
-# MDF = Board("MDF", density=700)  # gęstość 700 kg/m^3 dla płyty MDF
-# HINGE = Fitting("Hinge", weight=0.2)  # przykładowy zawias o wadze 0.2 kg
-
 from furniture import Cabinet
 from pack import pack_elements
-from src.visualizer import visualize_cabinet
 
+# from src.visualizer import visualize_cabinet
 
 def main():
     # Przykład tworzenia szafki typu hotty
@@ -18,7 +13,7 @@ def main():
     print(f"Szafka zapakowana w {len(packages)} paczek")
 
     # Wizualizacja
-    visualize_cabinet(cabinet)
+    # visualize_cabinet(cabinet)
 
 
 if __name__ == "__main__":
