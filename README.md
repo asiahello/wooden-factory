@@ -30,3 +30,6 @@ Poproszę o przykładowy projekt w pythonie na taki program - na razie bez bazy 
 
 Przy budowie szafki nie uwzględniajmy na razie pleców. 
 Aha, i przydałby się jakiś sposób podejrzenia wygenerowanej szafki (wizualny).
+
+# contributors:
+- baju
