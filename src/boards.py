@@ -8,5 +8,8 @@ class Board:
         self.type = type
         self.density = density  # w kg/m^3
 
+    def __repr__(self):
+        return f"płyta {self.name}"
+
     def weight(self, width: int, height: int):
         return width / 1000 * height / 1000 * self.density * self.thickness / 1000

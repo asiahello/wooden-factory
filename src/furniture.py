@@ -10,12 +10,23 @@ HINGE = Fitting(name="Hinge", weight=0.2)
 
 
 class Cabinet:
-    def __init__(self, width, height, type):
+    def __init__(self, width, height, type, board_name):
         self.width = width
         self.height = height
         # todo: zdefiniować typy mebli w enumie
         # todo: zmienić type na cabinet_type, bo type jest zarezerwowanym słowem kluczowym
         self.type = type
+
+
+        if board_name == "plywood":
+            self.board = PLYWOOD
+        elif board_name == "mdf":
+            self.board = MDF
+        elif board_name == "chipboard":
+            self.board = CHIPBOARD
+        else:
+            raise ValueError("unknown board")
+
         self.elements = self._build_elements()
 
     # todo: zdefiniować enuma z materiałami
@@ -28,17 +39,17 @@ class Cabinet:
             vertical_count = int(self.width / 50)
 
             for _ in range(horizontal_count):
-                elements.append(Element(width=self.width, height=50, board=MDF, fittings=[HINGE]))
+                elements.append(Element(width=self.width, height=50, board=self.board, fittings=[HINGE]))
             for _ in range(vertical_count):
-                elements.append(Element(width=50, height=50, board=MDF, fittings=[]))
+                elements.append(Element(width=50, height=50, board=self.board, fittings=[]))
         elif self.type == "vetty":
             horizontal_count = int(self.width / 50)
             vertical_count = int(self.height / 50)
 
             for _ in range(vertical_count):
-                elements.append(Element(width=50, height=self.height, board=MDF, fittings=[HINGE]))
+                elements.append(Element(width=50, height=self.height, board=self.board, fittings=[HINGE]))
             for _ in range(horizontal_count):
-                elements.append(Element(width=self.width, height=50, board=MDF))
+                elements.append(Element(width=self.width, height=50, board=self.board))
         return elements
 
     def total_weight(self):
