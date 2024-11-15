@@ -35,3 +35,4 @@ Aha, i przydałby się jakiś sposób podejrzenia wygenerowanej szafki (wizualny
 - baju
 - -krzys
 - Kwasia
+- Iga
