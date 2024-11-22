@@ -1,11 +1,13 @@
 from furniture import Cabinet
 from pack import pack_elements
+from src.boards import BoardEnum
+
 
 # from src.visualizer import visualize_cabinet
 
 def main():
     # Przykład tworzenia szafki typu hotty
-    cabinet = Cabinet(width=1000, height=2000, type="vetty", board_name="plywood")
+    cabinet = Cabinet(width=1000, height=2000, type="vetty", board_name=BoardEnum.PLYWOOD)
     print(f"Łączna waga szafki: {cabinet.total_weight()} kg")
     print(f"materiał płyty: {cabinet.board} ")
     # Pakowanie elementów szafki
