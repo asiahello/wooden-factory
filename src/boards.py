@@ -7,9 +7,6 @@ class BoardEnum(Enum):
     CHIPBOARD="CHIPBOARD"
 
 
-
-
-
 class Board:
     thickness : int = 18  # stala grubość dla każdej płyty
 

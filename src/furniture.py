@@ -1,11 +1,17 @@
 from boards import Board
 from element import Element
 from fittings import Fitting
+
+
 from src.boards import BoardEnum
 
-MDF = Board(name=BoardEnum.MDF, type="-", density=1000)
-PLYWOOD = Board(name=BoardEnum.PLYWOOD, type="-", density=700)
-CHIPBOARD = Board(name=BoardEnum.CHIPBOARD, type="-", density=600)
+
+BOARDS = {
+    BoardEnum.PLYWOOD: Board(name=BoardEnum.PLYWOOD, type="-", density=700),
+    BoardEnum.MDF: Board(name=BoardEnum.MDF, type="-", density=1000),
+    BoardEnum.CHIPBOARD: Board(name=BoardEnum.CHIPBOARD, type="-", density=600)
+}
+
 
 HINGE = Fitting(name="Hinge", weight=0.2)
 
@@ -17,17 +23,7 @@ class Cabinet:
         # todo: zdefiniować typy mebli w enumie
         # todo: zmienić type na cabinet_type, bo type jest zarezerwowanym słowem kluczowym
         self.type = type
-
-
-        if board_name == BoardEnum.PLYWOOD:
-            self.board = PLYWOOD
-        elif board_name == BoardEnum.MDF:
-            self.board = MDF
-        elif board_name == BoardEnum.CHIPBOARD:
-            self.board = CHIPBOARD
-        else:
-            raise ValueError("unknown board")
-
+        self.board = BOARDS[board_name]
         self.elements = self._build_elements()
 
     # todo: zdefiniować enuma z materiałami
