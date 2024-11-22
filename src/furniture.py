@@ -1,10 +1,11 @@
 from boards import Board
 from element import Element
 from fittings import Fitting
+from src.boards import BoardEnum
 
-MDF = Board(name="mdf", type="-", density=1000)
-PLYWOOD = Board(name='plywood', type="-", density=700)
-CHIPBOARD = Board(name='chipboard', type="-", density=600)
+MDF = Board(name=BoardEnum.MDF, type="-", density=1000)
+PLYWOOD = Board(name=BoardEnum.PLYWOOD, type="-", density=700)
+CHIPBOARD = Board(name=BoardEnum.CHIPBOARD, type="-", density=600)
 
 HINGE = Fitting(name="Hinge", weight=0.2)
 
@@ -18,11 +19,11 @@ class Cabinet:
         self.type = type
 
 
-        if board_name == "plywood":
+        if board_name == BoardEnum.PLYWOOD:
             self.board = PLYWOOD
-        elif board_name == "mdf":
+        elif board_name == BoardEnum.MDF:
             self.board = MDF
-        elif board_name == "chipboard":
+        elif board_name == BoardEnum.CHIPBOARD:
             self.board = CHIPBOARD
         else:
             raise ValueError("unknown board")
