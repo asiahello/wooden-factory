@@ -7,7 +7,7 @@ from src.boards import BoardEnum
 
 def main():
     # Przykład tworzenia szafki typu hotty
-    cabinet = Cabinet(width=1000, height=2000, type="vetty", board_name=BoardEnum.PLYWOOD)
+    cabinet = Cabinet(width=1000, height=2000, type="vetty", board_name=BoardEnum.OSB)
     print(f"Łączna waga szafki: {cabinet.total_weight()} kg")
     print(f"materiał płyty: {cabinet.board} ")
     # Pakowanie elementów szafki

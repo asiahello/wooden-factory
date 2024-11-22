@@ -5,6 +5,7 @@ class BoardEnum(Enum):
     MDF="MDF"
     PLYWOOD="PLYWOOD"
     CHIPBOARD="CHIPBOARD"
+    OSB="OSB"
 
 
 class Board:
