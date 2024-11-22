@@ -9,7 +9,8 @@ from src.boards import BoardEnum
 BOARDS = {
     BoardEnum.PLYWOOD: Board(name=BoardEnum.PLYWOOD, type="-", density=700),
     BoardEnum.MDF: Board(name=BoardEnum.MDF, type="-", density=1000),
-    BoardEnum.CHIPBOARD: Board(name=BoardEnum.CHIPBOARD, type="-", density=600)
+    BoardEnum.CHIPBOARD: Board(name=BoardEnum.CHIPBOARD, type="-", density=600),
+    BoardEnum.OSB: Board(name=BoardEnum.OSB, type="-", density=430)
 }
 
 
@@ -23,7 +24,10 @@ class Cabinet:
         # todo: zdefiniować typy mebli w enumie
         # todo: zmienić type na cabinet_type, bo type jest zarezerwowanym słowem kluczowym
         self.type = type
-        self.board = BOARDS[board_name]
+
+        self.board = BOARDS.get(board_name)
+        if not self.board:
+            raise ValueError(f"uknown board {board_name}")
         self.elements = self._build_elements()
 
     # todo: zdefiniować enuma z materiałami
